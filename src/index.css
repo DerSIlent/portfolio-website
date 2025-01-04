@@ -47,3 +47,10 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-dark;
 }
+
+/* Smooth scrolling for non-Safari browsers */
+@supports not (-webkit-hyphens:none) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

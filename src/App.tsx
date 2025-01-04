@@ -5,9 +5,11 @@ import Projects from './components/Projects';
 import Interests from './components/Interests';
 import ExtracurricularActivities from './components/ExtracurricularActivities';
 import { useScrollSnap } from './hooks/useScrollSnap';
+import { useBrowserDetection } from './hooks/useBrowserDetection';
 
 export default function App() {
-  useScrollSnap();
+  const { isSafari } = useBrowserDetection();
+  useScrollSnap(!isSafari); // Only enable scroll snap if not Safari
 
   return (
     <AnimatePresence>
@@ -17,7 +19,7 @@ export default function App() {
         exit={{ opacity: 0 }}
         className="h-screen overflow-hidden"
       >
-        <div className="h-screen overflow-y-auto snap-y snap-mandatory">
+        <div className={`h-screen overflow-y-auto ${!isSafari ? 'snap-y snap-mandatory' : ''}`}>
           <Hero />
           <Skills />
           <Projects />
