@@ -6,7 +6,7 @@ export function ContactInfo() {
     <div className="flex flex-wrap gap-6 text-gray-600">
       <div className="flex items-center gap-2 hover:text-black transition-colors duration-200">
         <MapPin size={18} className="flex-shrink-0" />
-        <span>Prins Hendrikkade 79c Amsterdam, Noord-Holland, 1012AE</span>
+        <span>Amsterdam, Noord-Holland</span>
       </div>
       <div className="flex items-center gap-2">
         <Mail size={18} className="flex-shrink-0" />
@@ -17,7 +17,7 @@ export function ContactInfo() {
           SDR-1998@hotmail.com
         </a>
       </div>
-      <div className="flex items-center gap-2">
+      {/* <div className="flex items-center gap-2">
         <Phone size={18} className="flex-shrink-0" />
         <a 
           href="tel:+31643714655" 
@@ -25,7 +25,7 @@ export function ContactInfo() {
         >
           +31643714655
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
